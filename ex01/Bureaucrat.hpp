@@ -6,7 +6,7 @@
 /*   By: aldiaz-u <aldiaz-u@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 10:57:03 by aldiaz-u          #+#    #+#             */
-/*   Updated: 2026/02/05 12:34:57 by aldiaz-u         ###   ########.fr       */
+/*   Updated: 2026/02/05 18:22:50 by aldiaz-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 #define BUREAUCRAT_HPP
 #include <iostream>
 #include <string>
+#include "Form.hpp"
+#include "Bureaucrat.hpp"
+
 using std::cout;
 using std::endl;
 using std::string;
 using std::exception;
 using std::ostream;
+
+class Form;
 
 class Bureaucrat
 {
@@ -36,25 +41,27 @@ class Bureaucrat
 		int			getGrade() const;
 		void		incrementGrade();
 		void		decrementGrade();
+		void		signForm(Form& form);
+
+		class GradeTooHighException : public exception
+		{
+			public:
+				const	char* what() const throw()
+				{
+					return ("Exception: Bureaucrat of too high a level");
+				}
+		};
+		
+		class GradeTooLowException : public exception
+		{
+			public:
+				const	char* what() const throw()
+				{
+					return ("Exception: Bureaucrat of too high a level");
+				}
+		};
 };
 
-class GradeTooHighException : public exception
-{
-	public:
-		const	char* what() const throw()
-		{
-			return ("Exception: Bureaucrat of too high a level");
-		}
-};
-
-class GradeTooLowException : public exception
-{
-	public:
-		const	char* what() const throw()
-		{
-			return ("Exception: Bureaucrat of too high a level");
-		}
-};
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &object);
 #endif
