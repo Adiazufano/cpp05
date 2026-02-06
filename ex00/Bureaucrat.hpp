@@ -29,7 +29,7 @@ class Bureaucrat
 	public:
 		Bureaucrat();
 		Bureaucrat(string name, int grade);
-		Bureaucrat(Bureaucrat& other);
+		Bureaucrat(const Bureaucrat& other);
 		Bureaucrat&	operator=(const Bureaucrat& other);
 		~Bureaucrat();
 		string		getName() const;

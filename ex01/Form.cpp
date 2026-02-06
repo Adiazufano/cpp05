@@ -26,12 +26,12 @@ Form::Form(string name, int execGrade, int signGrade) : isSigned(false), name(na
 	cout << "Form: constructor" << endl;
 }
 
-Form::Form(Form& other) : isSigned(other.isSigned), name(other.name), signGrade(other.signGrade), execGrade(other.execGrade)
+Form::Form(const Form& other) : isSigned(other.isSigned), name(other.name), signGrade(other.signGrade), execGrade(other.execGrade)
 {
 		cout << "Form: copy constructor" << endl;
 }
 
-Form&	Form::operator=(Form& other)
+Form&	Form::operator=(const Form& other)
 {
 	if (this != &other)
 		this -> isSigned = other.isSigned;

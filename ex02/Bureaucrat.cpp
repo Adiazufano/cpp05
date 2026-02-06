@@ -67,26 +67,38 @@ void	Bureaucrat::decrementGrade()
 	grade++;
 }
 
-void	Bureaucrat::signForm(Form& form)
+void	Bureaucrat::signAForm(AForm& AForm)
 {
 	try
 	{
-		if (form.getIsSigned())
+		if (AForm.getIsSigned())
 		{
-			cout << getName() << " alredy signed " << form.getName() << endl;
+			cout << getName() << " alredy signed " << AForm.getName() << endl;
 			return ;
 		}
-		form.beSigned(*this);
-		cout << getName() << " signed " << form.getName() << endl;
+		AForm.beSigned(*this);
+		cout << getName() << " signed " << AForm.getName() << endl;
 		
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << getName() << " can't signed " << form.getName() << " because "  << e.what() << endl;
+		std::cerr << getName() << " can't signed " << AForm.getName() << " because "  << e.what() << endl;
 	}
 	
 }
 
+void	Bureaucrat::executeForm(const AForm& form) const
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const exception& e)
+	{
+		std::cerr << e.what() << endl;
+	}
+	
+}
 ostream&	operator<<(ostream& os, const Bureaucrat& bureaucrat)
 {
 	os << bureaucrat.getName() <<  ", bureaucrat grade " << bureaucrat.getGrade();
