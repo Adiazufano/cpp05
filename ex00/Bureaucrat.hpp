@@ -6,7 +6,7 @@
 /*   By: aldiaz-u <aldiaz-u@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 10:57:03 by aldiaz-u          #+#    #+#             */
-/*   Updated: 2026/02/18 11:20:46 by aldiaz-u         ###   ########.fr       */
+/*   Updated: 2026/02/18 11:24:51 by aldiaz-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class GradeTooHighException : public exception
 	public:
 		const	char* what() const throw()
 		{
-			return ("Exception: Bureaucrat of too high a level");
+			return ("Exception: Bureaucrat grade is too high");
 		}
 };
 
@@ -52,7 +52,7 @@ class GradeTooLowException : public exception
 	public:
 		const	char* what() const throw()
 		{
-			return ("Exception: Bureaucrat of too low a level");
+			return ("Exception: Bureaucrat garde is too low");
 		}
 };
 
