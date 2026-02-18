@@ -6,7 +6,7 @@
 /*   By: aldiaz-u <aldiaz-u@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 11:54:10 by aldiaz-u          #+#    #+#             */
-/*   Updated: 2026/02/05 18:09:42 by aldiaz-u         ###   ########.fr       */
+/*   Updated: 2026/02/18 11:17:54 by aldiaz-u         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ int	main()
 	{
 		try
 		{
-			Bureaucrat	hermes("Hermes Conrad", 34);
-			std::cout << hermes << std::endl;
+			Bureaucrat	b("Alberto", 34);
+			std::cout << b << std::endl;
 			Form	form("WowForm", 35, 100);
 			std::cout << form << std::endl;
-			hermes.signForm(form);
+			b.signForm(form);
 			std::cout << form << std::endl;
-			hermes.signForm(form);
+			b.signForm(form);
 			std::cout << form << std::endl;
 		}
 		catch(const std::exception& e)
@@ -37,14 +37,14 @@ int	main()
 	{
 		try
 		{
-			Bureaucrat	hermes("Hermes Conrad", 34);
-			std::cout << hermes << std::endl;
-			hermes.decrementGrade();
-			hermes.decrementGrade();
-			hermes.decrementGrade();
+			Bureaucrat	b("Carlos", 34);
+			std::cout << b << std::endl;
+			b.decrementGrade();
+			b.decrementGrade();
+			b.decrementGrade();
 			Form	form("WowForm", 35, 100);
 			std::cout << form << std::endl;
-			hermes.signForm(form);
+			b.signForm(form);
 			std::cout << form << std::endl;
 		}
 		catch(const std::exception& e)
@@ -56,14 +56,14 @@ int	main()
 	{
 		try
 		{
-			Bureaucrat	hermes;
-			std::cout << hermes << std::endl;
+			Bureaucrat	b;
+			std::cout << b << std::endl;
 			Form	form;
 			std::cout << form << std::endl;
-			hermes.signForm(form);
+			b.signForm(form);
 			std::cout << form << std::endl;
-			hermes.decrementGrade();
-			std::cout << hermes << std::endl;
+			b.decrementGrade();
+			std::cout << b << std::endl;
 		}
 		catch(const std::exception& e)
 		{
