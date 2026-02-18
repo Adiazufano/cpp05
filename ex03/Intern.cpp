@@ -46,7 +46,7 @@ AForm* Intern::makeForm(string name, string target)
 	methods[1] = &Intern::makeRobotomyCreationForm;
 	methods[2] = &Intern::makePresidentialPardonForm;
 
-	for (int index; index < 3; index++)
+	for (int index = 0; index < 3; index++)
 		if (name == names[index])
 			return (this ->*methods[index])(target);
 	throw Intern::FormNotFoundException();
